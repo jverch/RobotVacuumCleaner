@@ -6,7 +6,7 @@ type RobotVacuumCleanerOutput = {
   finalRoom: number;
 }
 
-export class RobotVacuumCleaner {
+export default class RobotVacuumCleaner {
   actualPath: number[];
   roomsCleaned: Set<number>;
   batchesProcessed: number;
