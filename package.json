@@ -5,8 +5,10 @@
   "main": "index.ts",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "start_scheduler": "node dist/scheduler/index.js",
+    "start_traverser": "node dist/traverser/index.js",
+    "dev_scheduler": "concurrently \"npx tsc --watch\" \"nodemon -q dist/scheduler/index.js\"",
+    "dev_traverser": "concurrently \"npx tsc --watch\" \"nodemon -q dist/traverser/index.js\""
   },
   "author": "jverch",
   "license": "ISC",

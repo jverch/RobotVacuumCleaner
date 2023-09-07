@@ -1,6 +1,6 @@
 "use strict";
 // No optimization at all
-function robotVacuumCleaner(cleaningBatches, priorityRooms) {
+function robotVacuumCleanerTraverser(cleaningBatches, priorityRooms) {
     console.log('Robot vacuum cleaner');
     console.log('Cleaning batches: ', cleaningBatches);
     console.log('Priority rooms: ', priorityRooms);
@@ -54,4 +54,4 @@ let input1 = {
     ],
     priorityRooms: [2, 4, 6, 8]
 };
-console.log(robotVacuumCleaner(input1.cleaningBatches, input1.priorityRooms));
+console.log(robotVacuumCleanerTraverser(input1.cleaningBatches, input1.priorityRooms));
