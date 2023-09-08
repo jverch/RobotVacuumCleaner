@@ -36,6 +36,8 @@ app.post('/api/schedule', jsonParser, (req: Request, res: Response) => {
         batchRooms.push(currentBatch[j]);
       }
     }
+    batchRooms.sort((a, b) => a - b);
+    batchPriorityRooms.sort((a, b) => a - b);
     batches.push({
       batchRooms: batchRooms,
       batchPriorityRooms: batchPriorityRooms

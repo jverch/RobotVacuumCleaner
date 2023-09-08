@@ -56,39 +56,35 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <body>
-        <h1>Robot Vacuum Cleaner</h1>
-        <h4>Input options:</h4>
-        <div>
-          <div>
-            Input 1:
-            <p>{JSON.stringify(input1)}</p>
-          </div>
-          <div>
-            Input 2:
-            <p>{JSON.stringify(input2)}</p>
-          </div>
-          <div>
-            Input 3:
-            <p>{JSON.stringify(input3)}</p>
-          </div>
-          <label>
-            Submit input:
-            <br></br>
-            <select value={selectedOption} onChange={handleDropdownChange}>
-              <option value="1">Input 1</option>
-              <option value="2">Input 2</option>
-              <option value="3">Input 3</option>
-            </select>
-          </label>
-          <button onClick={submitBatches}>Submit</button>
-        </div>
-        <br></br>
-        <div>
-          <button onClick={getRobotVacuumData}>Get Robot Vacuum Data</button>
-          <p>{robotData}</p>
-        </div>
-      </body>
+      <h1>Robot Vacuum Cleaner</h1>
+      <h4>Input options:</h4>
+      <div>
+        {inputs.map((input, index) => {
+          return (
+            <div key={index + 1}>
+              Input {index + 1}
+              <p>{JSON.stringify(input)}</p>
+            </div>
+          )
+        })}
+        <label>
+          Submit input:
+          <br></br>
+          <select value={selectedOption} onChange={handleDropdownChange}>
+            {inputs.map((input, index) => {
+              return (
+                <option key={index + 1} value={index + 1}>Input {index + 1}</option>
+              )
+            })}
+          </select>
+        </label>
+        <button onClick={submitBatches}>Submit</button>
+      </div>
+      <br></br>
+      <div>
+        <button onClick={getRobotVacuumData}>Get Robot Vacuum Data</button>
+        <p>{robotData}</p>
+      </div>
     </div>
   );
 }
@@ -109,4 +105,9 @@ const input3 = {
   priorityRooms: [2]
 }
 
-const inputs = [input1, input2, input3];
+const input4 = {
+  batches: [[100, 20, 1, 50], [10, 1, 1, 50]],
+  priorityRooms: [1]
+}
+
+const inputs = [input1, input2, input3, input4];
